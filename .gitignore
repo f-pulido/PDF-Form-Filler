@@ -1,0 +1,19 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Flask
+instance/
+*.pyc
+*.pyo
+__pycache__
+
+# Config file
+config.py
+
+test.py
+/testPDF/

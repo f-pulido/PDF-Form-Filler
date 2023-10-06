@@ -1,0 +1,23 @@
+{{ bootstrap.load_css() }}
+{{ bootstrap.load_js() }}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Form Filler</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>Let's get started!</p>
+
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        {{ form.pdf_count.label }}
+        {{ form.pdf_count(size=32) }}
+        <input type="submit" id="submit_pdf_count" name="submit_pdf_count" value="Let's Upload!"/>
+    </form>
+</body>
+</html>
