@@ -27,3 +27,15 @@ def home_page():
 def upload_page(pdf_count):
     form = PDFCountForm()
     return render_template('upload.html', form=form, pdf_count=pdf_count)
+
+# @app.route('/upload', methods=('POST',))
+# def handle_upload():
+#     form = PDFCountForm()
+#     # Access the uploaded files using request.files
+#     pdf_count = int(request.form['pdf_count'])
+#     for i in range(pdf_count):
+#         file = request.files[f'pdf{i}']
+#         # Process the file as needed (save, validate, etc.)
+#         # ...
+#     # Redirect or render a success page
+#     return render_template('success.html', form=form)
