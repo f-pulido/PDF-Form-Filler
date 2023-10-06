@@ -1,0 +1,26 @@
+{{ bootstrap.load_css() }}
+{{ bootstrap.load_js() }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Form Filler</title>
+</head>
+<body>
+    <h1>Upload PDFs</h1>
+    <p>Upload your PDFs below:</p>
+
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        {% for i in range(pdf_count) %}
+            <label for="pdf{{ i }}">PDF {{ i + 1 }}</label>
+            <input type="file" id="pdf{{ i }}" name="pdf{{ i }}" accept=".pdf" required>
+            <br>
+        {% endfor %}
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
